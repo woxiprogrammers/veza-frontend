@@ -6,6 +6,7 @@
  * Time: 10:15 AM
  */
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -239,24 +240,12 @@
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
                 </ol>
                 <!-- Wrapper for carousel items -->
-                <div class="carousel-inner">
-                    <div class="item carousel-item active">
-                        {{--<div class="img-box"><img src="media/img/testimonial/1.jpg" alt=""></div>--}}
-                        <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-                        <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
-                    </div>
-                    <div class="item carousel-item">
-                        {{--<div class="img-box"><img src="media/img/testimonial/2.jpg" alt=""></div>--}}
-                        <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-                        <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
-                    </div>
-                    <div class="item carousel-item">
-                        {{--<div class="img-box"><img src="media/img/testimonial/3.jpg" alt=""></div>--}}
-                        <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
-                        <p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
-                    </div>
+                <div class="carousel-inner" id="testimonial">
+
                 </div>
                 <!-- Carousel controls -->
                 <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
@@ -287,7 +276,6 @@
             <p id="contact-number"></p>
         </div>
         <div class="col-md-6">
-            <!--<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=woxi%20pune&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>-->
             <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
         </div>
     </div>
@@ -351,108 +339,132 @@
                 $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
                     if(slider['slider_number'] == "slider1"){
                         slider_str += '<div class="carousel-item active">\n' +
-                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:500px;">\n' +
+                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:50%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
                             '                      <span style="color: white;opacity: 1;">\n' +
-                            '                         "'+slider['message1']+'"' +
+                            '                         '+slider['message1']+'' +
                             '                      </span>' +
                             '                            </h1>\n' +
                             '                            <br/><br/>\n' +
-                            '                            <h2>"'+slider['message2']+'"</h2>\n' +
+                            '                            <h2>'+slider['message2']+'</h2>\n' +
                             '                            <br/><br/>\n' +
-                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">"'+slider['hyper_name']+'"</a>\n' +
+                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
                             '                            <br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>'
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" style="width:100%; height:500px;">\n' +
+                            '                        <img src="'+slider['image']+'" style="width:100%; height:50%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
                             '                      <span style="color: white;opacity: 1;">\n' +
-                            '                         "'+slider['message1']+'"' +
+                            '                         '+slider['message1']+'' +
                             '                      </span>\n' +
                             '                            </h1>\n' +
                             '                            <br/><br/>\n' +
-                            '                            <h2>"'+slider['message2']+'" </h2>\n' +
+                            '                            <h2>'+slider['message2']+'</h2>\n' +
                             '                            <br/><br/>\n' +
-                            '                           <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">"'+slider['hyper_name']+'"</a>\n' +
+                            '                           <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
                             '                            <br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>'
 
                     }if(slider['slider_number'] == "slider3"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" alt="New York" style="width:100%; height:400px;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:50%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
                             '                      <span style="color: white;opacity: 1;">\n' +
-                            '                          "'+slider['message1']+'"' +
+                            '                          '+slider['message1']+'' +
                             '                      </span>\n' +
                             '                            </h1>\n' +
                             '                            <br/><br/>\n' +
-                            '                            <h2 >"'+slider['message2']+'" </h2>\n' +
+                            '                            <h2 >'+slider['message2']+'</h2>\n' +
                             '                            <br/><br/>\n' +
-                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">"'+slider['hyper_name']+'"</a>\n' +
+                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
                             '                            <br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>'
                     }
                     $("#slider-main-div").html(slider_str);
                 });
+
                 if(jsonObj['data']['achievements'] == ""){
-                    $('#pills-achievements').html('<h3>no data found</h3>');
+                    $('#pills-achievements').html('<h5>No data found</h5>');
                 }else{
                     var str_achivment = '';
                     $.each(jsonObj['data']['achievements'],function (key,achievementData){
                         str_achivment += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe; ">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>"'+achievementData['created_at']+'"</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">"'+achievementData['title']+'"</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> "'+achievementData['detail']+'"</div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+achievementData['created_at']+'</i></div>\n' +
+                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+achievementData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12"><i>Details : </i> '+achievementData['detail']+'</div>\n' +
                             '                    </div>'
                     });
                     $('#pills-achievements').html(str_achivment);
                 }
 
-
                 if(jsonObj['data']['announcement'] == ""){
-                    $('#pills-annoucement').html('<h3>no data found</h3>');
+                    $('#pills-annoucement').html('<h5>No data found</h5>');
                 }else{
                     var str_announcement = '';
                     $.each(jsonObj['data']['announcement'],function (key,announcmentData){
                         str_announcement += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>"'+announcmentData['created_at']+'"</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">"'+announcmentData['title']+'"</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> "'+announcmentData['detail']+'"</div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+announcmentData['created_at']+'</i></div>\n' +
+                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+announcmentData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12"><i>Details : </i> '+announcmentData['detail']+'</div>\n' +
                             '                    </div>'
                     });
                     $('#pills-annoucement').html(str_announcement);
                 }
 
-
                 var str_event = '';
                 if(jsonObj['data']['events'] == ""){
-                    $('#pills-events').html('<h3>no data found</h3>');
+                    $('#pills-events').html('<h3>No data found</h3>');
                 }else{
                     $.each(jsonObj['data']['events'],function (key,eventData){
-                        if(eventData == empty()){
-                            str_event = '<h5 >No Data Found</h5>'
-                        }else{
                             str_event += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                                '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>"'+eventData['created_at']+'"</i></div>\n' +
-                                '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">"'+eventData['title']+'"</span></div>\n' +
-                                '                        <div class="col-md-12"><i>Details : </i> "'+eventData['detail']+'"</div>\n' +
+                                '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+eventData['created_at']+'</i></div>\n' +
+                                '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+eventData['title']+'</span></div>\n' +
+                                '                        <div class="col-md-12"><i>Details : </i> '+eventData['detail']+'</div>\n' +
                                 '                    </div>'
-                        }
-
                     });
                     $('#pills-events').html(str_announcement);
                 }
 
+                var str_testimonial = '';
+                $.each(jsonObj['data']['testimonial'],function (key,testimonialData){
+                    if(testimonialData['slug'] == 'testimonial1'){
+                        str_testimonial += ' <div class="item carousel-item active">' +
+                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
+                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
+                                '</div>'
+                    }if(testimonialData['slug'] == 'testimonial2'){
+                        str_testimonial += ' <div class="item carousel-item ">' +
+                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
+                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
+                            '</div>'
+                    }if(testimonialData['slug'] == 'testimonial3'){
+                        str_testimonial += ' <div class="item carousel-item ">' +
+                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
+                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
+                            '</div>'
+                    }if(testimonialData['slug'] == 'testimonial4'){
+                        str_testimonial += ' <div class="item carousel-item ">' +
+                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
+                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
+                            '</div>'
+                    }if(testimonialData['slug'] == 'testimonial5'){
+                        str_testimonial += ' <div class="item carousel-item ">' +
+                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
+                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
+                            '</div>'
+                    }
+                    $('#testimonial').html(str_testimonial);
+                });
             }
         });
     });
