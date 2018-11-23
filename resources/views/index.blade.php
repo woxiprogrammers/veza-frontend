@@ -6,102 +6,11 @@
  * Time: 10:15 AM
  */
 ?>
+@extends('master')
+@section('content')
+    <div class="container-fluid"> <!-- Start Of Container -->
 
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Veza : WebCMS</title>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-</head>
-<body>
-<div class="container-fluid"> <!-- Start Of Container -->
-    <div class="row"> <!-- Start Of Header -->
-        <div class="col-md-12">
-            <div class="row background-header-style" >
-                <div class="col-md-12 ">
-                    <div class="text-right">
-                        <div class="header-info-color" id="headerMessage"> </div>
-                       <div id="headerSocialLinks"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" >
-                <div class="col-md-2">
-                    <img id="headerLogo"  height="80px" width="100px">
-                </div>
-                <div class="col-md-10">
-                    <div class="row pull-right" >
-                        <div class="col-md-12" >
-                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                <!-- <a class="navbar-brand" href="#">Navbar</a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                                  <span class="navbar-toggler-icon"></span>
-                                </button> -->
-                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item active">
-                                            <a class="nav-link border-bottom" href="#">Home <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Gallery</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Events</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Custom Tab 1</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Custom Tab 2
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab2">
-                                                <a class="dropdown-item" href="#">Page 1</a>
-                                                <a class="dropdown-item" href="#">Page 2</a>
-                                                <a class="dropdown-item" href="#">Page 3</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Custom Tab 3
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Page 1</a>
-                                                <a class="dropdown-item" href="#">Page 2</a>
-                                                <a class="dropdown-item" href="#">Page 3</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">About Us</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Contact us</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- End Of Header -->
-
-    <!-- Start Of Slider -->
-
+        <!-- Start Of Slider -->
     <div class="row">
         <div class="col-md-12">
             <div id="myCarousel1" class="carousel slide" data-ride="carousel">
@@ -111,16 +20,6 @@
                     <li data-target="#myCarousel1" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" id="slider-main-div">
-                    <!--<div class="carousel-item active">
-                      <img class="d-block w-100" src="media/img/slider/slider1.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="media/img/slider/slider2.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="media/img/slider/slider3.jpg" alt="Third slide">
-                    </div>-->
-
                 </div>
                 <!-- Carousel controls -->
                 <a class="carousel-control left carousel-control-prev" href="#myCarousel1" data-slide="prev">
@@ -159,44 +58,8 @@
                 <h2>Gallery</h2>
             </div>
             <div class="clearfix clearfix-height-20"></div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="media/img/gallery/gallery1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Social Gathering</h5>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="gallery-data">
 
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="media/img/gallery/gallery2.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Sports</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="media/img/gallery/gallery3.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Republic day celebration</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="media/img/gallery/gallery4.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Diwali</h5>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -286,187 +149,9 @@
 
 
     <!-- Start Of Footer -->
-    <div class="row background-footer">
-        <div class="col-md-12 col-padding-top-30 text-center">
-            <div id="footer"></div>
-            <div id="footerSocialMedia"></div>
-        </div>
-    </div>
+     @include('footer')
     <!-- End Of Footer -->
 
 </div> <!-- End Of Container -->
-</body>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/popper.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $.ajax({
-            url: "{{env('BASE_URL')}}/api/temp1/user/master-details/{{env('BODY_ID')}}",
-            type:'get',
-            dataType:'json',
-            success: function (responce) {
-                var obj = JSON.stringify(responce);
-                var jsonObj = JSON.parse(obj);
-                $("#headerLogo").attr("src",jsonObj['data']['headerData']['logo']);
-                $('#headerMessage').html(jsonObj['data']['headerData']['message']);
-                $('#footer').html(jsonObj['data']['footerData']['message']);
-                var str = '';
-                $.each(jsonObj['data']['socialMedia']['links'], function(key , value){
-                    if(value['slug'] == 'facebook'){
-                        str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: #3b5998"></i></a>\t\t';
-                    }if(value['slug'] == 'linked-in'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin-in fa-lg" style="color: blue"></i></a>'
-                    }if(value['slug'] == 'google'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: #dd4b39"></i></a>'
-                    }if(value['slug'] == 'twitter'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: #55acee"></i></a>'
-                    }if(value['slug'] == 'instagram'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa a-instagram fa-lg" style="color: #3f729b"></i></a>'
-                    }if(value['slug'] == 'youtube'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: #e52d27"></i></a>'
-                    }
-                    $('#footerSocialMedia').html(str);
-                    $('#headerSocialLinks').html(str);
-                });
-                $('#contact-address').html(jsonObj['data']['contactUs']['address']);
-                $('#contact-number').html(jsonObj['data']['contactUs']['contact_number']);
-                $('#contact-email').html(jsonObj['data']['contactUs']['email']);
-                $('#aboutUsDetails').html(jsonObj['data']['aboutUs']['details']);
-                $("#aboutUsImage").attr("src",jsonObj['data']['aboutUs']['image']);
-                $('#gmap_canvas').attr("src",jsonObj['data']['aboutUs']['map']);
-                var slider_str = '';
-                $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
-                    if(slider['slider_number'] == "slider1"){
-                        slider_str += '<div class="carousel-item active">\n' +
-                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:50%;">\n' +
-                            '                        <div class="carousel-caption">\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
-                            '                      <span style="color: white;opacity: 1;">\n' +
-                            '                         '+slider['message1']+'' +
-                            '                      </span>' +
-                            '                            </h1>\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <h2>'+slider['message2']+'</h2>\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
-                            '                            <br/><br/>\n' +
-                            '                        </div>\n' +
-                            '                    </div>'
-                    }if(slider['slider_number'] == "slider2"){
-                        slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" style="width:100%; height:50%;">\n' +
-                            '                        <div class="carousel-caption">\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
-                            '                      <span style="color: white;opacity: 1;">\n' +
-                            '                         '+slider['message1']+'' +
-                            '                      </span>\n' +
-                            '                            </h1>\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <h2>'+slider['message2']+'</h2>\n' +
-                            '                            <br/><br/>\n' +
-                            '                           <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
-                            '                            <br/><br/>\n' +
-                            '                        </div>\n' +
-                            '                    </div>'
 
-                    }if(slider['slider_number'] == "slider3"){
-                        slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:50%;">\n' +
-                            '                        <div class="carousel-caption">\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
-                            '                      <span style="color: white;opacity: 1;">\n' +
-                            '                          '+slider['message1']+'' +
-                            '                      </span>\n' +
-                            '                            </h1>\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <h2 >'+slider['message2']+'</h2>\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
-                            '                            <br/><br/>\n' +
-                            '                        </div>\n' +
-                            '                    </div>'
-                    }
-                    $("#slider-main-div").html(slider_str);
-                });
-
-                if(jsonObj['data']['achievements'] == ""){
-                    $('#pills-achievements').html('<h5>No data found</h5>');
-                }else{
-                    var str_achivment = '';
-                    $.each(jsonObj['data']['achievements'],function (key,achievementData){
-                        str_achivment += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe; ">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+achievementData['created_at']+'</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+achievementData['title']+'</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> '+achievementData['detail']+'</div>\n' +
-                            '                    </div>'
-                    });
-                    $('#pills-achievements').html(str_achivment);
-                }
-
-                if(jsonObj['data']['announcement'] == ""){
-                    $('#pills-annoucement').html('<h5>No data found</h5>');
-                }else{
-                    var str_announcement = '';
-                    $.each(jsonObj['data']['announcement'],function (key,announcmentData){
-                        str_announcement += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+announcmentData['created_at']+'</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+announcmentData['title']+'</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> '+announcmentData['detail']+'</div>\n' +
-                            '                    </div>'
-                    });
-                    $('#pills-annoucement').html(str_announcement);
-                }
-
-                var str_event = '';
-                if(jsonObj['data']['events'] == ""){
-                    $('#pills-events').html('<h3>No data found</h3>');
-                }else{
-                    $.each(jsonObj['data']['events'],function (key,eventData){
-                            str_event += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                                '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+eventData['created_at']+'</i></div>\n' +
-                                '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+eventData['title']+'</span></div>\n' +
-                                '                        <div class="col-md-12"><i>Details : </i> '+eventData['detail']+'</div>\n' +
-                                '                    </div>'
-                    });
-                    $('#pills-events').html(str_announcement);
-                }
-
-                var str_testimonial = '';
-                $.each(jsonObj['data']['testimonial'],function (key,testimonialData){
-                    if(testimonialData['slug'] == 'testimonial1'){
-                        str_testimonial += ' <div class="item carousel-item active">' +
-                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
-                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
-                                '</div>'
-                    }if(testimonialData['slug'] == 'testimonial2'){
-                        str_testimonial += ' <div class="item carousel-item ">' +
-                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
-                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
-                            '</div>'
-                    }if(testimonialData['slug'] == 'testimonial3'){
-                        str_testimonial += ' <div class="item carousel-item ">' +
-                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
-                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
-                            '</div>'
-                    }if(testimonialData['slug'] == 'testimonial4'){
-                        str_testimonial += ' <div class="item carousel-item ">' +
-                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
-                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
-                            '</div>'
-                    }if(testimonialData['slug'] == 'testimonial5'){
-                        str_testimonial += ' <div class="item carousel-item ">' +
-                            '<div class="img-box"><img src="'+testimonialData['image']+'" ></div>\n' +
-                            '               <p class="testimonial">'+testimonialData['details']+'</p>'+
-                            '</div>'
-                    }
-                    $('#testimonial').html(str_testimonial);
-                });
-            }
-        });
-    });
-</script>
-</html>
+@stop

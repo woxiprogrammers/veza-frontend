@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/events',function(){
+   return view('events');
+});
+Route::get('/aboutUs',function(){
+    return view('aboutUs');
+});
+Route::get('/subPage',function(){
+    return view('subPage')->with(compact('id'));
+});
+Route::get('/contactUs',function(){
+    return view('contactUs');
+});
+Route::get('/gallery',function(){
+    return view('gallery');
+});
