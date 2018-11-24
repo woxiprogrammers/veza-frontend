@@ -14,10 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <title>Veza : WebCMS</title>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -28,16 +27,18 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row background-header-style" >
-            <div class="col-md-2">
-                <img id="headerLogo"  height="80px" width="100px">
-            </div>
-            <div class="col-md-10 text-right">
-                <div class="header-info-color" id="headerMessage"> </div>
-                <div id="headerSocialLinks"></div>
-            </div>
+                <div class="col-md-10 text-right">
+                    <div class="header-info-color" id="headerMessage"></div>
+                </div>
+                <div class="col-md-2 text-right">
+                    <div id="headerSocialLinks"></div>
+                </div>
         </div>
         <div class="row" >
-            <div class="col-md-12">
+            <div class="col-md-2">
+                <img id="headerLogo"  height="100px" width="100px" style="padding-left: 10%">
+            </div>
+            <div class="col-md-10">
                 <div class="row pull-right" >
                     <div class="col-md-12" >
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,9 +56,7 @@
 <hr>
 @yield('content')
 </body>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/popper.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $.ajax({
@@ -249,14 +248,14 @@
                     }if(menuData['slug'] == 'custom-1'){
                         var str_sub_menu = '';
                         if(menuData['sub_menu'] != null){
-                            str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab2">' ;
+                            str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab1">' ;
                             menuData['sub_menu'].forEach(function (obj) {
-                                str_sub_menu += '<a class="dropdown-item" href="{{env('BASE_URL')}}/api/temp1/user/sub-pages-details/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
-                            })
+                                str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                            });
                                 str_sub_menu += '</div> ';
                         }
                         str_menu += '<li class="nav-item dropdown">\n' +
-                            '                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
+                            '                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
                             '                                            '+menuData['display_name']+'\n' +
                             '                                        </a>\n' +
                             str_sub_menu +
@@ -266,8 +265,8 @@
                         if(menuData['sub_menu'] != null){
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab2">' ;
                             menuData['sub_menu'].forEach(function (obj) {
-                                str_sub_menu += '<a class="dropdown-item" href="{{env('BASE_URL')}}/api/temp1/user/sub-pages-details/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
-                            })
+                                str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                            });
                             str_sub_menu += '</div> ';
                         }
                         str_menu += '<li class="nav-item dropdown">\n' +
@@ -279,14 +278,14 @@
                     }if(menuData['slug'] == 'custom-3'){
                         var str_sub_menu = '';
                         if(menuData['sub_menu'] != null){
-                            str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab2">' ;
+                            str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab3">' ;
                             menuData['sub_menu'].forEach(function (obj) {
-                                str_sub_menu += '<a class="dropdown-item" href="{{env('BASE_URL')}}/api/temp1/user/sub-pages-details/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
-                            })
+                                str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                            });
                             str_sub_menu += '</div> ';
                         }
                         str_menu += '<li class="nav-item dropdown">\n' +
-                            '                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
+                            '                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
                             '                                            '+menuData['display_name']+'\n' +
                             '                                        </a>\n' +
                             str_sub_menu +
@@ -311,7 +310,7 @@
                 $.each(jsonObj['data']['gallery'],function (key,galleryData){
                     str_gallery +=' <div class="col-md-6" >\n' +
                         '                    <div class="card" style="width: 18rem;">\n' +
-                        '<img class="card-img-top" src="'+galleryData['images'][0]+'">\n' +
+                        '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'">\n' +
                     '                        <div class="card-body">\n' +
                     '                            <h5 class="card-title">'+galleryData['folder_name']+'</h5>\n' +
                     '                        </div>'+
@@ -321,6 +320,7 @@
                 $('#gallery-data').html(str_gallery);
             }
         });
+
     });
 </script>
 </html>

@@ -29,3 +29,7 @@ Route::get('/contactUs',function(){
 Route::get('/gallery',function(){
     return view('gallery');
 });
+
+Route::group(['prefix' => '/temp1'], function () {
+    Route::get('/pages/sub-pages-view/{page_id}',array('uses' => 'PageRouteController@pageRoute'));
+});
