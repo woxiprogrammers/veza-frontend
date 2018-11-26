@@ -14,22 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/events',function(){
-   return view('events');
-});
-Route::get('/aboutUs',function(){
-    return view('aboutUs');
-});
-Route::get('/subPage',function(){
-    return view('subPage')->with(compact('id'));
-});
-Route::get('/contactUs',function(){
-    return view('contactUs');
-});
-Route::get('/gallery',function(){
-    return view('gallery');
-});
 
 Route::group(['prefix' => '/temp1'], function () {
     Route::get('/pages/sub-pages-view/{page_id}',array('uses' => 'PageRouteController@pageRoute'));
+    Route::get('/pages/gallery-details',array('uses' => 'PageRouteController@galleryRoute'));
+    Route::get('/pages/events-details',array('uses' => 'PageRouteController@eventRoute'));
+    Route::get('/pages/about-us-details',array('uses' => 'PageRouteController@aboutUsRoute'));
+    Route::get('/pages/contact-us-view',array('uses' => 'PageRouteController@contactUsRoute'));
 });

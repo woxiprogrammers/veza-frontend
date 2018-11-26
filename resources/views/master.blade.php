@@ -231,19 +231,19 @@
                             '      </li>'
                     }if(menuData['slug'] == 'gallery'){
                         str_menu += ' <li class="nav-item">\n' +
-                            '      <a class="nav-link" href="{{env('BASE_URL')}}/api/temp1/user/gallery-details">'+menuData['display_name']+'</a>&nbsp;\n' +
+                            '      <a class="nav-link" href="{{env('WEBBASE_URL')}}/temp1/pages/gallery-details">'+menuData['display_name']+'</a>&nbsp;\n' +
                             '      </li>';
                     }if(menuData['slug'] == 'events'){
                         str_menu += ' <li class="nav-item">\n' +
-                            '      <a class="nav-link" href="{{env('BASE_URL')}}/api/temp1/user/events-details">'+menuData['display_name']+'</a>&nbsp;\n' +
+                            '      <a class="nav-link" href="{{env('WEBBASE_URL')}}/temp1/pages/events-details">'+menuData['display_name']+'</a>&nbsp;\n' +
                             '      </li>';
                     }if(menuData['slug'] == 'about-us'){
                         str_menu += ' <li class="nav-item">\n' +
-                            '      <a class="nav-link" href="{{env('BASE_URL')}}/api/temp1/user/about-us-details">'+menuData['display_name']+'</a>&nbsp;\n' +
+                            '      <a class="nav-link" href="{{env('WEBBASE_URL')}}//temp1/pages/about-us-details">'+menuData['display_name']+'</a>&nbsp;\n' +
                             '      </li>';
                     }if(menuData['slug'] == 'contact-us'){
                         str_menu += ' <li class="nav-item">\n' +
-                            '      <a class="nav-link" href="{{env('BASE_URL')}}/api/temp1/user/contact-us-view">'+menuData['display_name']+'</a>&nbsp;\n' +
+                            '      <a class="nav-link" href="{{env('WEBBASE_URL')}}/temp1/pages/contact-us-view">'+menuData['display_name']+'</a>&nbsp;\n' +
                             '      </li>';
                     }if(menuData['slug'] == 'custom-1'){
                         var str_sub_menu = '';

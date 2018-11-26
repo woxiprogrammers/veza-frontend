@@ -18,5 +18,16 @@ class PageRouteController extends Controller
     {
         return view('subPage')->with(compact('page_id'));
     }
-
+    public function galleryRoute(){
+        return view('gallery');
+    }
+    public function eventRoute(){
+        return view('events');
+    }
+    public function aboutUsRoute(){
+        return view('aboutUs');
+    }
+    public function contactUsRoute(){
+        return view('contactUs');
+    }
 }

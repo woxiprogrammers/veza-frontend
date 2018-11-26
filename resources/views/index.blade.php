@@ -38,7 +38,6 @@
     <!-- Start Of About us -->
     <div class="row background-vision">
         <div class="col-md-6 col-padding-top-30">
-            <h2>Vision & Misson</h2>
             <p id="aboutUsDetails"></p>
         </div>
         <div class="col-md-6" style="padding-top: 30px;">
