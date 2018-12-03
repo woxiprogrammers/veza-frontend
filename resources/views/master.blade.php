@@ -20,13 +20,12 @@
     <title>Veza : WebCMS</title>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
 </head>
 <body>
 <!-- Start Of Header -->
 <div class="row">
     <div class="col-md-12">
-        <div class="row background-header-style" >
+        <div class="row">
                 <div class="col-md-10 text-right">
                     <div class="header-info-color" id="headerMessage"></div>
                 </div>
@@ -36,24 +35,44 @@
         </div>
         <div class="row" >
             <div class="col-md-2">
-                <img id="headerLogo"  height="100px" width="100px" style="padding-left: 10%">
+                <img id="headerLogo" height="120px" width="140px" style="padding-left: 10%">
             </div>
             <div class="col-md-10">
-                <div class="row pull-right" >
-                    <div class="col-md-12" >
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <div class="collapse navbar-collapse" id="navbarNavDropdown" >
-                                <ul class="navbar-nav" id="navbarMenue">
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+                <div class="col-md-12 pull-right" >
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+                            <ul class="navbar-nav" id="navbarMenue">
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <hr>
+<!-- Start Of Slider -->
+<div class="row">
+    <div class="col-md-12">
+        <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel1" data-slide-to="1"></li>
+                <li data-target="#myCarousel1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" id="slider-main-div">
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control left carousel-control-prev" href="#myCarousel1" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#myCarousel1" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- End Of Slider -->
 @yield('content')
 </body>
 
@@ -74,15 +93,15 @@
                     if(value['slug'] == 'facebook'){
                         str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: #3b5998"></i></a>\t\t';
                     }if(value['slug'] == 'linked-in'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin-in fa-lg" style="color: blue"></i></a>'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin-in fa-lg" style="color: blue"></i></a>\t\t'
                     }if(value['slug'] == 'google'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: #dd4b39"></i></a>'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: #dd4b39"></i></a>\t\t'
                     }if(value['slug'] == 'twitter'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: #55acee"></i></a>'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: #55acee"></i></a>\t\t'
                     }if(value['slug'] == 'instagram'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa a-instagram fa-lg" style="color: #3f729b"></i></a>'
+                        str += '<a href="'+value['social_link']+'"><i class="fa a-instagram fa-lg" style="color: #3f729b"></i></a>\t\t'
                     }if(value['slug'] == 'youtube'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: #e52d27"></i></a>'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: #e52d27"></i></a>\t\t'
                     }
                     $('#footerSocialMedia').html(str);
                     $('#headerSocialLinks').html(str);
@@ -157,9 +176,9 @@
                     var str_achivment = '';
                     $.each(jsonObj['data']['achievements'],function (key,achievementData){
                         str_achivment += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe; ">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+achievementData['created_at']+'</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+achievementData['title']+'</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> '+achievementData['detail']+'</div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><b>'+achievementData['created_at']+'</b></div>\n' +
+                            '                        <div class="col-md-12"><b>Title : </b> <span style="color: #000000">'+achievementData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12"><b>Details : </b> '+achievementData['detail']+'</div>\n' +
                             '                    </div>';
                     });
                     $('#pills-achievements').html(str_achivment);
@@ -171,9 +190,9 @@
                     var str_announcement = '';
                     $.each(jsonObj['data']['announcement'],function (key,announcmentData){
                         str_announcement += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+announcmentData['created_at']+'</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+announcmentData['title']+'</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> '+announcmentData['detail']+'</div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><b>'+announcmentData['created_at']+'</b></div>\n' +
+                            '                        <div class="col-md-12"><b>Title : </b> <span style="color: #000000">'+announcmentData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12"><b>Details : </b> '+announcmentData['detail']+'</div>\n' +
                             '                    </div>';
                     });
                     $('#pills-annoucement').html(str_announcement);
@@ -181,13 +200,13 @@
 
                 var str_event = '';
                 if(jsonObj['data']['events'] == ""){
-                    $('#pills-events').html('<h3>No data found</h3>');
+                    $('#pills-events').html('<h5>No data found</h5>');
                 }else{
                     $.each(jsonObj['data']['events'],function (key,eventData){
                         str_event += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><i>'+eventData['created_at']+'</i></div>\n' +
-                            '                        <div class="col-md-12"><i>Title : </i> <span style="color: #000000">'+eventData['title']+'</span></div>\n' +
-                            '                        <div class="col-md-12"><i>Details : </i> '+eventData['detail']+'</div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><b>'+eventData['created_at']+'</b></div>\n' +
+                            '                        <div class="col-md-12"><b>Title : </b> <span style="color: #000000">'+eventData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12"><b>Details : </b> '+eventData['detail']+'</div>\n' +
                             '                    </div>';
                     });
                     $('#pills-events').html(str_announcement);
@@ -239,7 +258,7 @@
                             '      </li>';
                     }if(menuData['slug'] == 'about-us'){
                         str_menu += ' <li class="nav-item">\n' +
-                            '      <a class="nav-link" href="{{env('WEBBASE_URL')}}//temp1/pages/about-us-details">'+menuData['display_name']+'</a>&nbsp;\n' +
+                            '      <a class="nav-link" href="{{env('WEBBASE_URL')}}/temp1/pages/about-us-details">'+menuData['display_name']+'</a>&nbsp;\n' +
                             '      </li>';
                     }if(menuData['slug'] == 'contact-us'){
                         str_menu += ' <li class="nav-item">\n' +
@@ -302,6 +321,10 @@
                         str_menu += ' <li class="nav-item">\n' +
                             '      <a class="nav-link" href="'+menuData['link']+'">'+menuData['display_name']+'</a>&nbsp;\n' +
                             '      </li>';
+                    }if(menuData['slug'] == 'custom-link-4'){
+                        str_menu += ' <li class="nav-item">\n' +
+                            '      <a class="nav-link" href="'+menuData['link']+'">'+menuData['display_name']+'</a>&nbsp;\n' +
+                            '      </li>';
                     }
                     $('#navbarMenue').html(str_menu)
 
@@ -310,7 +333,7 @@
                 $.each(jsonObj['data']['gallery'],function (key,galleryData){
                     str_gallery +=' <div class="col-md-6" >\n' +
                         '                    <div class="card" style="width: 18rem;">\n' +
-                        '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'">\n' +
+                        '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100%; height:50%;">\n' +
                     '                        <div class="card-body">\n' +
                     '                            <h5 class="card-title">'+galleryData['folder_name']+'</h5>\n' +
                     '                        </div>'+

@@ -10,28 +10,7 @@
 @section('content')
     <div class="container-fluid"> <!-- Start Of Container -->
 
-        <!-- Start Of Slider -->
-    <div class="row">
-        <div class="col-md-12">
-            <div id="myCarousel1" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel1" data-slide-to="1"></li>
-                    <li data-target="#myCarousel1" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" id="slider-main-div">
-                </div>
-                <!-- Carousel controls -->
-                <a class="carousel-control left carousel-control-prev" href="#myCarousel1" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="carousel-control right carousel-control-next" href="#myCarousel1" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- End Of Slider -->
+
 
     <div class="clearfix clearfix-height"></div>
 
@@ -64,7 +43,7 @@
 
         <div class="col-md-6 col-padding-top-30">
             <div class="col-md-12">
-                <h2>Events/Achievements/Annoucement</h2>
+                <h2>Events</h2>
             </div>
             <div class="clearfix clearfix-height-20"></div>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

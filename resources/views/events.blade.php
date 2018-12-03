@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-md-12 col-padding-top-30">
         <div class="col-md-12">
-            <h2>Events/Achievements/Annoucement</h2>
+            <h2>Events</h2>
         </div>
         <div class="clearfix clearfix-height-20"></div>
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
