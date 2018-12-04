@@ -103,7 +103,7 @@
     <div class="clearfix clearfix-height"></div>
 
     <!-- Start Of Contact Us -->
-    <div class="row background-contact" style="background-image: url({{env('CONTACT_US_IMAGES')}})">
+    <div class="row background-contact" style="background-image: url({{env('CONTACT_US_IMAGES')}});padding-bottom: 5%" >
         <div class="col-md-6" style="padding-top: 25%;padding-left: 20%">
             <h5><b> Address :</b></h5>
             <p id="contact-address"> </p>
@@ -112,9 +112,8 @@
             <h5><b> Contact no :</b></h5>
             <p id="contact-number"></p>
         </div>
-        <div class="col-md-6 pull-left" style="padding-top: 25%;">
-
-            <div class="mapouter"><div class="gmap_canvas" style="width: 80%;height: 70%;"><iframe width="400" height="300" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+        <div class="col-md-6 pull-left">
+            <div class="mapouter"  style="padding-top: 50%;padding-left: 16%"><div class="gmap_canvas" style="width: 80%;height: 130%;"><iframe width="500" height="400" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
         </div>
     </div>
 

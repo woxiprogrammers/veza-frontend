@@ -115,7 +115,7 @@
                 $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
                     if(slider['slider_number'] == "slider1"){
                         slider_str += '<div class="carousel-item active">\n' +
-                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:50%;">\n' +
+                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:30%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
@@ -132,7 +132,7 @@
                             '                    </div>';
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" style="width:100%; height:50%;">\n' +
+                            '                        <img src="'+slider['image']+'" style="width:100%; height:30%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
@@ -150,7 +150,7 @@
 
                     }if(slider['slider_number'] == "slider3"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:50%;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
