@@ -6,10 +6,9 @@
  * Time: 3:26 PM
  */
 ?>
-<hr>
-<div class="row background-footer">
-    <div class="col-md-12 col-padding-top-30 text-center">
-        <div id="footer"></div>
+<div class="row background-footer" style="background-color: #3c90ea">
+    <div class="col-md-12 text-center">
+        <div style="color: white;padding-top: 1%" id="footer"></div>
         <div id="footerSocialMedia"></div>
     </div>
 </div>

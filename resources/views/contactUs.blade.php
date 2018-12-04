@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="400" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
                 </div>
             </div>
         </div>
@@ -47,7 +47,9 @@
                                         '                                    <label class="control-label">\n' +
                                         '                                        '+value['name']+': \n' +
                                         '                                    </label>\n' +
+                                        '<div class="col-5">'+
                                         '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                        '</div>'+
                                         '                                </div>\n' ;
                                 }if(value['slug'] == 'contact_no'){
                                str_contact_form +=
@@ -55,7 +57,9 @@
                                    '                                    <label class="control-label">\n' +
                                    '                                        '+value['name']+': \n' +
                                    '                                    </label>\n' +
+                                   '<div class="col-5">'+
                                    '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '</div>'+
                                    '                                </div>\n';
                            }if(value['slug'] == 'email'){
                                str_contact_form +=
@@ -63,7 +67,9 @@
                                    '                                    <label class="control-label">\n' +
                                    '                                        '+value['name']+': \n' +
                                    '                                    </label>\n' +
+                                   '<div class="col-5">'+
                                    '                                    <input type="email" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '</div>'+
                                    '                                </div>\n' ;
                            }if(value['slug'] == 'subject'){
                                str_contact_form +=
@@ -71,15 +77,21 @@
                                    '                                    <label class="control-label">\n' +
                                    '                                        '+value['name']+': \n' +
                                    '                                    </label>\n' +
+                                                                       '<div class="col-5">'+
                                    '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '</div>'+
                                    '                                </div>\n' ;
+
                            }if(value['slug'] == 'message'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
                                    '                                    <label class="control-label">\n' +
                                    '                                        '+value['name']+': \n' +
                                    '                                    </label>\n' +
-                                   '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                       '<div class="col-5">'+
+                                   '                                    <textarea  id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                       '</textarea>'+
+                                   '</div>'+
                                    '                                </div>\n' ;
                            }
 

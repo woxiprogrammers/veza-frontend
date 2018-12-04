@@ -25,21 +25,21 @@
 <!-- Start Of Header -->
 <div class="row">
     <div class="col-md-12">
-        <div class="row">
+        <div class="row" style="background-color: #3c90ea;padding-top: 10px">
                 <div class="col-md-10 text-right">
-                    <div class="header-info-color" id="headerMessage"></div>
+                    <div style="color: white" class="header-info-color" id="headerMessage"></div>
                 </div>
-                <div class="col-md-2 text-right">
+                <div>
                     <div id="headerSocialLinks"></div>
                 </div>
         </div>
         <div class="row" >
             <div class="col-md-2">
-                <img id="headerLogo" height="120px" width="140px" style="padding-left: 10%">
+                <img id="headerLogo" height="120px" width="140px" style="padding-left: 5%">
             </div>
-            <div class="col-md-10">
-                <div class="col-md-12 pull-right" >
-                    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="col-md-10" style="padding-top: 2%">
+                <div class="col-md-12" >
+                    <nav class="navbar navbar-expand-lg navbar-light  pull-right">
                         <div class="collapse navbar-collapse" id="navbarNavDropdown" >
                             <ul class="navbar-nav" id="navbarMenue">
                             </ul>
@@ -50,7 +50,6 @@
         </div>
     </div>
 </div>
-<hr>
 <!-- Start Of Slider -->
 <div class="row">
     <div class="col-md-12">
@@ -91,17 +90,17 @@
                 var str = '';
                 $.each(jsonObj['data']['socialMedia']['links'], function(key , value){
                     if(value['slug'] == 'facebook'){
-                        str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: #3b5998"></i></a>\t\t';
+                        str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: white"></i></a>\t\t\t\t';
                     }if(value['slug'] == 'linked-in'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin-in fa-lg" style="color: blue"></i></a>\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin fa-lg" style="color: #e52d27"></i></a>\t\t\t\t'
                     }if(value['slug'] == 'google'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: #dd4b39"></i></a>\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: white"></i></a>\t\t\t\t'
                     }if(value['slug'] == 'twitter'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: #55acee"></i></a>\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: #e52d27"></i></a>\t\t\t\t'
                     }if(value['slug'] == 'instagram'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa a-instagram fa-lg" style="color: #3f729b"></i></a>\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-instagram fa-lg" style="color: white"></i></a>\t\t\t\t'
                     }if(value['slug'] == 'youtube'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: #e52d27"></i></a>\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: #e52d27"></i></a>\t\t\t\t'
                     }
                     $('#footerSocialMedia').html(str);
                     $('#headerSocialLinks').html(str);

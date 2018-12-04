@@ -10,8 +10,6 @@
 @section('content')
     <div class="container-fluid"> <!-- Start Of Container -->
 
-
-
     <div class="clearfix clearfix-height"></div>
 
     <!-- Start Of About us -->
@@ -105,26 +103,24 @@
     <div class="clearfix clearfix-height"></div>
 
     <!-- Start Of Contact Us -->
-    <div class="row background-contact">
-        <div class="col-md-6 col-padding-top-30">
-            <h5> Address :</h5>
+    <div class="row background-contact" style="background-image: url({{env('CONTACT_US_IMAGES')}})">
+        <div class="col-md-6" style="padding-top: 25%;padding-left: 20%">
+            <h5><b> Address :</b></h5>
             <p id="contact-address"> </p>
-            <hr class="my-4">
-            <h5> Email :</h5>
+            <h5><b> Email :</b></h5>
             <p id="contact-email"></p>
-            <hr class="my-4">
-            <h5> Contact no :</h5>
+            <h5><b> Contact no :</b></h5>
             <p id="contact-number"></p>
         </div>
-        <div class="col-md-6">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+        <div class="col-md-6 pull-left" style="padding-top: 25%;">
+
+            <div class="mapouter"><div class="gmap_canvas" style="width: 80%;height: 70%;"><iframe width="400" height="300" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
         </div>
     </div>
 
     <!-- End Of Contact Us -->
 
-    <div class="clearfix clearfix-height"></div>
-
+    {{--<div class="clearfix clearfix-height"></div>--}}
 
     <!-- Start Of Footer -->
      @include('footer')
