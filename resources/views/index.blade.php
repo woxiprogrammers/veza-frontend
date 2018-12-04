@@ -18,7 +18,7 @@
             <p id="aboutUsDetails"></p>
         </div>
         <div class="col-md-6" style="padding-top: 30px;">
-            <img id="aboutUsImage" src="" style="width: 90%;height: 80%">
+            <img id="aboutUsImage" src="" style="width: 80%;height: 60%">
         </div>
     </div>
     <!-- End Of About us -->

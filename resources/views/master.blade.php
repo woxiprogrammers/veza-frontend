@@ -90,17 +90,17 @@
                 var str = '';
                 $.each(jsonObj['data']['socialMedia']['links'], function(key , value){
                     if(value['slug'] == 'facebook'){
-                        str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: white"></i></a>\t\t\t\t';
+                        str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: white"></i></a>&nbsp;&nbsp';
                     }if(value['slug'] == 'linked-in'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin fa-lg" style="color: #e52d27"></i></a>\t\t\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin fa-lg" style="color: white"></i></a>&nbsp;&nbsp'
                     }if(value['slug'] == 'google'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: white"></i></a>\t\t\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: white"></i></a>&nbsp;&nbsp'
                     }if(value['slug'] == 'twitter'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: #e52d27"></i></a>\t\t\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: white"></i></a>&nbsp;&nbsp'
                     }if(value['slug'] == 'instagram'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-instagram fa-lg" style="color: white"></i></a>\t\t\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-instagram fa-lg" style="color: white"></i></a>&nbsp;&nbsp'
                     }if(value['slug'] == 'youtube'){
-                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: #e52d27"></i></a>\t\t\t\t'
+                        str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: white"></i></a>&nbsp;&nbsp'
                     }
                     $('#footerSocialMedia').html(str);
                     $('#headerSocialLinks').html(str);
@@ -118,33 +118,38 @@
                             '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:30%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
-                            '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
+                            '                            <h1 style="opacity: 0.8;">\n' +
                             '                      <span style="color: white;opacity: 1;">\n' +
                             '                         '+slider['message1']+'' +
                             '                      </span>' +
                             '                            </h1>\n' +
                             '                            <br/><br/>\n' +
                             '                            <h2>'+slider['message2']+'</h2>\n' +
-                            '                            <br/><br/>\n' +
-                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
-                            '                            <br/><br/>\n' +
-                            '                        </div>\n' +
-                            '                    </div>';
+                            '                            <br/><br/>\n';
+                                if(slider['hyper_name'] != ""){
+                                    slider_str += '<a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n';
+                                }
+                               slider_str+= ' <br/><br/>\n' +
+                        '                        </div>\n' +
+                        '                    </div>';
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
                             '                        <img src="'+slider['image']+'" style="width:100%; height:30%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
-                            '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
+                            '                            <h1 style="opacity: 0.8;">\n' +
                             '                      <span style="color: white;opacity: 1;">\n' +
                             '                         '+slider['message1']+'' +
                             '                      </span>\n' +
                             '                            </h1>\n' +
                             '                            <br/><br/>\n' +
                             '                            <h2>'+slider['message2']+'</h2>\n' +
-                            '                            <br/><br/>\n' +
-                            '                           <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
-                            '                            <br/><br/>\n' +
+                            '                            <br/><br/>\n';
+                                if(slider['hyper_name'] != ""){
+                                  slider_str += '<a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n';
+
+                                }
+                            slider_str+= '<br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>';
 
@@ -153,16 +158,37 @@
                             '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
-                            '                            <h1 style="background: #000000;opacity: 0.8;">\n' +
+                            '                            <h1 style="opacity: 0.8;">\n' +
                             '                      <span style="color: white;opacity: 1;">\n' +
                             '                          '+slider['message1']+'' +
                             '                      </span>\n' +
                             '                            </h1>\n' +
                             '                            <br/><br/>\n' +
                             '                            <h2 >'+slider['message2']+'</h2>\n' +
+                            '                            <br/><br/>\n';
+                        if(slider['hyper_name'] != "") {
+                            slider_str += '<a id="slider-link" href="' + slider['hyper_link'] + '" class="btn btn-primary">' + slider['hyper_name'] + '</a>\n';
+                        }
+                         slider_str +='<br/><br/>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                    }if(slider['slider_number'] == "slider4"){
+                        slider_str += '<div class="carousel-item">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;">\n' +
+                            '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
-                            '                            <a id="slider-link" href="'+slider['hyper_link']+'" class="btn btn-primary">'+slider['hyper_name']+'</a>\n' +
+                            '                            <h1 style="opacity: 0.8;">\n' +
+                            '                      <span style="color: white;opacity: 1;">\n' +
+                            '                          '+slider['message1']+'' +
+                            '                      </span>\n' +
+                            '                            </h1>\n' +
                             '                            <br/><br/>\n' +
+                            '                            <h2 >'+slider['message2']+'</h2>\n' +
+                            '                            <br/><br/>\n';
+                        if(slider['hyper_name'] != "") {
+                            slider_str += '<a id="slider-link" href="' + slider['hyper_link'] + '" class="btn btn-primary">' + slider['hyper_name'] + '</a>\n';
+                        }
+                        slider_str +='<br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>';
                     }
