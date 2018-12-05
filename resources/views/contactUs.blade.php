@@ -17,7 +17,21 @@
                         <div id="contact-form" >
 
                         </div>
-
+                        <div class="row form-group">
+                            <div class="col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <div class="captcha">
+                                    <span>{!! captcha_img() !!}</span>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-refresh" id="refresh"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-3"></div>
+                            <div class="form-group col-md-5">
+                                <input style="margin-left: 13%" id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha" required>
+                            </div>
+                        </div>
                         <div  id="form-submit">
 
                         </div>
@@ -128,5 +142,16 @@
                     }
                 })
             })
+    </script>
+    <script>
+        $('#refresh').click(function(){
+            $.ajax({
+                type:'GET',
+                url:'/refreshcaptcha',
+                success:function(data){
+                    $(".captcha span").html(data.captcha);
+                }
+            });
+        });
     </script>
 @stop

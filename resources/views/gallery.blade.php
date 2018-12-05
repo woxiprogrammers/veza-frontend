@@ -8,6 +8,7 @@
 ?>
 @extends('master')
 @section('content')
+    <br>
         <div class="col-md-12" style="text-align: center">
             <h2 >Gallery</h2>
         </div>
@@ -28,38 +29,39 @@
             </div>
         </div>
     @include('footer')
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                url: "{{env('BASE_URL')}}/api/temp1/user/master-details/{{env('BODY_ID')}}",
-                type: 'get',
-                dataType: 'json',
-                success: function (responce) {
-                    var obj = JSON.stringify(responce);
-                    var jsonObj = JSON.parse(obj);
-                    var str_gallery = '';
-                    $.each(jsonObj['data']['gallery'], function (key, galleryData) {
-                        str_gallery += ' <div class="col-md-6" >\n' +
-                            '                    <div class="card" style="width: 100%; text-align: center;">\n' +
-                            '                        <div>\n' +
-                            '                            <h5 class="card-title" style="font-size: 200%;!important;"><u><i>' + galleryData['folder_name'] + '</i></u></h5>\n' +
-                            '                        </div>';
-                        str_gallery += '<div class="">';
-                        galleryData['images'].forEach(function (obj) {
-                            str_gallery += '<img style="padding: 1%" class="img-responsive test" src="' + obj['image'] + '" height="20%" width="20%">\n';
-                        });
-                        str_gallery += '</div> '+
-                        '                    </div>\n' +
-                            '                </div>';
-                    });
-                    $('#gallery').html(str_gallery);
-                        $('img').on('click', function() {
-                            $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
-                            $('#enlargeImageModal').modal('show');
-                        });
-                }
-            })
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "{{env('BASE_URL')}}/api/temp1/user/gallery-all-images/{{env('BODY_ID')}}",
+            type: 'get',
+            dataType: 'json',
+        success: function (responce) {
+            var obj = JSON.stringify(responce);
+            var jsonObj = JSON.parse(obj);
+            var str_gallery = '';
+            $.each(jsonObj['data']['gallery'], function (key, galleryData) {
+                console.log(galleryData);
+                str_gallery += ' <div class="col-md-6" >\n' +
+                    '                    <div class="card" style="width: 100%; text-align: center;">\n' +
+                    '                        <div>\n' +
+                    '                            <h5 class="card-title" style="font-size: 200%;!important;"><u><i>' + galleryData['folder_name'] + '</i></u></h5>\n' +
+                    '                        </div>';
+                str_gallery += '<div class="">';
+                galleryData['images'].forEach(function (obj) {
+                    str_gallery += '<img style="padding: 1%" class="img-responsive test" src="' + obj['image'] + '" height="20%" width="20%">\n';
+                });
+                str_gallery += '</div> '+
+                    '                    </div>\n' +
+                    '                </div>';
+            });
+            $('#gallery').html(str_gallery);
+            $('img').on('click', function() {
+                $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+                $('#enlargeImageModal').modal('show');
+            });
+        }
+    })
 
-        })
-    </script>
+    })
+</script>
 @stop

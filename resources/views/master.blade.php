@@ -25,7 +25,7 @@
 <!-- Start Of Header -->
 <div class="row">
     <div class="col-md-12">
-        <div class="row" style="background-color: #3c90ea;padding-top: 10px">
+        <div class="row" style="background-color: #ec9b57;padding-top: 10px">
                 <div class="col-md-10 text-right">
                     <div style="color: white" class="header-info-color" id="headerMessage"></div>
                 </div>
@@ -71,6 +71,7 @@
         </div>
     </div>
 </div>
+
 <!-- End Of Slider -->
 @yield('content')
 </body>
@@ -115,7 +116,7 @@
                 $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
                     if(slider['slider_number'] == "slider1"){
                         slider_str += '<div class="carousel-item active">\n' +
-                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:30%;">\n' +
+                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:30%;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -134,7 +135,7 @@
                         '                    </div>';
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" style="width:100%; height:30%;">\n' +
+                            '                        <img src="'+slider['image']+'" style="width:100%; height:30%;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -155,7 +156,7 @@
 
                     }if(slider['slider_number'] == "slider3"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -358,7 +359,7 @@
                 $.each(jsonObj['data']['gallery'],function (key,galleryData){
                     str_gallery +=' <div class="col-md-6" >\n' +
                         '                    <div class="card" style="width: 18rem;">\n' +
-                        '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100%; height:50%;">\n' +
+                        '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100% !important; height:50% !important;">\n' +
                     '                        <div class="card-body">\n' +
                     '                            <h5 class="card-title">'+galleryData['folder_name']+'</h5>\n' +
                     '                        </div>'+
@@ -366,6 +367,7 @@
                         '                </div>';
                 });
                 $('#gallery-data').html(str_gallery);
+                $('#marquee').html(jsonObj['data']['marquee']['marquee_1']);
             }
         });
 

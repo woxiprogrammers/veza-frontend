@@ -11,7 +11,16 @@
     <div class="container-fluid"> <!-- Start Of Container -->
 
     <div class="clearfix clearfix-height"></div>
-
+       {{--Marquee--}}
+        <div class="row" style="background: #eaa265">
+            <div class="col-md-12">
+                <marquee behavior="scroll" direction="left" height="30" width="100%" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="5" scrolldelay="99" style="padding-left:10px; padding-right:0px; padding-top: 5px;">
+                    <div id="marquee">
+                    </div>
+                </marquee>
+            </div>
+        </div>
+        {{--End of Marquee--}}
     <!-- Start Of About us -->
     <div class="row background-vision">
         <div class="col-md-6 col-padding-top-30">
@@ -96,12 +105,11 @@
             </div>
         </div>
     </div>
-
     <!-- End Of Testimonials -->
+    {{--Users Count--}}
 
-
+    {{--End of Users Count--}}
     <div class="clearfix clearfix-height"></div>
-
     <!-- Start Of Contact Us -->
     <div class="row background-contact" style="background-image: url({{env('CONTACT_US_IMAGES')}});padding-bottom: 5%" >
         <div class="col-md-6" style="padding-top: 25%;padding-left: 20%">
@@ -116,10 +124,7 @@
             <div class="mapouter"  style="padding-top: 50%;padding-left: 16%"><div class="gmap_canvas" style="width: 80%;height: 130%;"><iframe width="500" height="400" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
         </div>
     </div>
-
     <!-- End Of Contact Us -->
-
-    {{--<div class="clearfix clearfix-height"></div>--}}
 
     <!-- Start Of Footer -->
      @include('footer')
