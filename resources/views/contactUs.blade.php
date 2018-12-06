@@ -10,8 +10,8 @@
 @section('content')
     <br>
         <div class="container-fluid container-fullw" >
-            <div class="row"  style="background-image: url({{env("CONTACT_US_BANNER")}});">
-                <div class="col-md-6 text-center" style="color: white">
+            <div class="row" style="background-color: #f2f2f2">
+                <div class="col-md-6 text-center" style="color: black">
                     <form method="post" action="{{env('BASE_URL')}}/api/temp1/user/contact-us-form-create/{{env('BODY_ID')}}">
                         <h3>Contact Us</h3>
                         <div id="contact-form" >
