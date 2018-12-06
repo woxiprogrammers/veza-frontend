@@ -365,10 +365,15 @@
                 })
                 var str_gallery = '';
                 $.each(jsonObj['data']['gallery'],function (key,galleryData){
+                    console.log(galleryData)
                     str_gallery +=' <div class="col-md-6" >\n' +
-                        '                    <div class="card" style="width: 18rem;">\n' +
-                                                 '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100% !important; height:150px !important;">\n' +
-                    '                            <div class="card-body">\n' +
+                        '                    <div class="card" style="width: 18rem;">\n' ;
+                            if('images' in galleryData){
+                                str_gallery += '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100% !important; height:150px !important;">\n' ;
+                            }else{
+                                str_gallery += '<img class="card-img-top" src="{{env("NO_IMAGE")}}"  style="width:100% !important; height:150px !important;">\n' ;
+                            }
+                   str_gallery += '                            <div class="card-body">\n' +
                     '                              <h6 style="text-align: center; padding-top: 2%" class="card-title">'+galleryData['folder_name'].toUpperCase()+'</h6>\n' +
                     '                            </div>'+
                         '                    </div>\n' +
