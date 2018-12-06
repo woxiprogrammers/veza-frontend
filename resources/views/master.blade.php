@@ -9,6 +9,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,6 +23,11 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 </head>
+<style>
+    body{
+        font-family: "Georgia", Times, serif;!important;
+    }
+</style>
 <body>
 <!-- Start Of Header -->
 <div class="row">
@@ -35,7 +42,7 @@
         </div>
         <div class="row" >
             <div class="col-md-2">
-                <img id="headerLogo" height="120px" width="140px" style="padding-left: 5%">
+                <img id="headerLogo" height="120px" width="140px" style="padding-left: 5%;padding-top: 2%">
             </div>
             <div class="col-md-10" style="padding-top: 2%">
                 <div class="col-md-12" >
@@ -58,6 +65,7 @@
                 <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel1" data-slide-to="1"></li>
                 <li data-target="#myCarousel1" data-slide-to="2"></li>
+                <li data-target="#myCarousel1" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner" id="slider-main-div">
             </div>
@@ -116,7 +124,7 @@
                 $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
                     if(slider['slider_number'] == "slider1"){
                         slider_str += '<div class="carousel-item active">\n' +
-                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:30%;!important;">\n' +
+                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:450px;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -135,7 +143,7 @@
                         '                    </div>';
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" style="width:100%; height:30%;!important;">\n' +
+                            '                        <img src="'+slider['image']+'" style="width:100%; height:450px;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -156,7 +164,7 @@
 
                     }if(slider['slider_number'] == "slider3"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;!important;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:450px;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -175,7 +183,7 @@
                             '                    </div>';
                     }if(slider['slider_number'] == "slider4"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:30%;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:450px;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -359,15 +367,16 @@
                 $.each(jsonObj['data']['gallery'],function (key,galleryData){
                     str_gallery +=' <div class="col-md-6" >\n' +
                         '                    <div class="card" style="width: 18rem;">\n' +
-                        '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100% !important; height:50% !important;">\n' +
-                    '                        <div class="card-body">\n' +
-                    '                            <h5 class="card-title">'+galleryData['folder_name']+'</h5>\n' +
-                    '                        </div>'+
+                                                 '<img class="card-img-top" src="'+galleryData['images'][0]['image']+'"  style="width:100% !important; height:150px !important;">\n' +
+                    '                            <div class="card-body">\n' +
+                    '                              <h6 style="text-align: center; padding-top: 2%" class="card-title">'+galleryData['folder_name'].toUpperCase()+'</h6>\n' +
+                    '                            </div>'+
                         '                    </div>\n' +
-                        '                </div>';
+                        '                </div>\n';
                 });
                 $('#gallery-data').html(str_gallery);
-                $('#marquee').html(jsonObj['data']['marquee']['marquee_1']);
+                $('#marquee-left').html(jsonObj['data']['marquee']['marquee_1']);
+                $('#marquee-up').html(jsonObj['data']['marquee']['marquee_2']);
             }
         });
 

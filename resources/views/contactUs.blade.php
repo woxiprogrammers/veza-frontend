@@ -10,8 +10,8 @@
 @section('content')
     <br>
         <div class="container-fluid container-fullw" >
-            <div class="row">
-                <div class="col-md-12 text-center">
+            <div class="row"  style="background-image: url({{env("CONTACT_US_BANNER")}});">
+                <div class="col-md-6 text-center" style="color: white">
                     <form method="post" action="{{env('BASE_URL')}}/api/temp1/user/contact-us-form-create/{{env('BODY_ID')}}">
                         <h3>Contact Us</h3>
                         <div id="contact-form" >
@@ -36,21 +36,17 @@
 
                         </div>
                     </form>
+                    <br>
+                        <h5><b> Address :</b></h5>
+                        <p id="contact-address"> </p>
+                        <h5><b> Email :</b></h5>
+                        <p id="contact-email"></p>
+                        <h5><b> Contact no :</b></h5>
+                        <p id="contact-number"></p>
                 </div>
-            </div>
-        </div>
-        <br>
-        <div class="row background-contact" style="background-image: url({{env('CONTACT_US_IMAGES')}});padding-bottom: 5%" >
-            <div class="col-md-6" style="padding-top: 25%;padding-left: 20%">
-                <h5><b> Address :</b></h5>
-                <p id="contact-address"> </p>
-                <h5><b> Email :</b></h5>
-                <p id="contact-email"></p>
-                <h5><b> Contact no :</b></h5>
-                <p id="contact-number"></p>
-            </div>
-            <div class="col-md-6 pull-left">
-                <div class="mapouter"  style="padding-top: 50%;padding-left: 16%"><div class="gmap_canvas" style="width: 80%;height: 130%;"><iframe width="500" height="400" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+                <div class="col-md-6 pull-left">
+                    <<div class="mapouter" style="padding-top: 1%;padding-left: 1%"><div class="gmap_canvas" style="width: 100%;height: 700px"><iframe width="800" height="700" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:800px;width:100%;}</style></div>
+                </div>
             </div>
         </div>
     @include('footer')
@@ -69,9 +65,6 @@
                                 if(value['slug'] == 'full_name'){
                                     str_contact_form +=
                                         '                                <div class="form-group">\n' +
-                                        '                                    <label class="control-label" style="margin-right: 32%;">\n' +
-                                        '                                        '+value['name']+' \n' +
-                                        '                                    </label>\n' +
                                         '<div class="col-md-5" style="margin-left: 30%">'+
                                         '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                         '</div>'+
@@ -79,9 +72,6 @@
                                 }if(value['slug'] == 'contact_no'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
-                                   '                                    <label class="control-label" style="margin-right: 31%;">\n' +
-                                   '                                        '+value['name']+' \n' +
-                                   '                                    </label>\n' +
                                    '<div class="col-md-5" style="margin-left: 30%">'+
                                    '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                    '</div>'+
@@ -89,9 +79,6 @@
                            }if(value['slug'] == 'email'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
-                                   '                                    <label class="control-label" style="margin-right: 34%;">\n' +
-                                   '                                        '+value['name']+' \n' +
-                                   '                                    </label>\n' +
                                    '<div class="col-md-5" style="margin-left: 30%">'+
                                    '                                    <input type="email" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                    '</div>'+
@@ -99,9 +86,6 @@
                            }if(value['slug'] == 'subject'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
-                                   '                                    <label class="control-label" style="margin-right: 33%;">\n' +
-                                   '                                        '+value['name']+' \n' +
-                                   '                                    </label>\n' +
                                                       '<div class="col-md-5" style="margin-left: 30%">'+
                                    '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                                       '</div>'+
@@ -110,9 +94,6 @@
                            }if(value['slug'] == 'message'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
-                                   '                                    <label class="control-label" style="margin-right: 32%;">\n' +
-                                   '                                        '+value['name']+' \n' +
-                                   '                                    </label>\n' +
                                        '<div class="col-md-5" style="margin-left: 30%">'+
                                    '                                    <textarea  id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                        '</textarea>'+
