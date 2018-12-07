@@ -9,8 +9,17 @@
 <div class="row background-footer" style="background-color: #ec9b57;">
     <div class="col-md-12">
         <div class="row" style="color: white;padding-top: 1%">
-            <div style="padding-left: 35%" id="footer"></div>
-            <div style="padding-left: 5%" id="footerSocialMedia"></div>
+            <div class="col-md-5" style="text-align: left">
+                <div id="footer"></div>
+            </div>
+            <div class="col-md-3" style="text-align: center">
+                <div style="background: dodgerblue;padding-right: 1%;padding-left: 1%;box-shadow: 5px 5px #888;" id="footerVisitorCount">
+                    <p style="color: white">Visitors Count : <span style="font-size: 18px" id="visitor_count">0</span></p>
+                </div>
+            </div>
+            <div class="col-md-4" style="text-align: right">
+                <div id="footerSocialMedia"></div>
+            </div>
         </div>
     </div>
 </div>

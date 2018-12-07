@@ -10,11 +10,11 @@
 @section('content')
     <br>
         <div class="container-fluid container-fullw" >
-            <div class="row" style="background-color: #f2f2f2">
+            <div class="row">
                 <div class="col-md-6 text-center" style="color: black">
                     <form method="post" action="{{env('BASE_URL')}}/api/temp1/user/contact-us-form-create/{{env('BODY_ID')}}">
                         <h3>Contact Us</h3>
-                        <div id="contact-form" >
+                        <div id="contact-form">
 
                         </div>
                         <div class="row form-group">
@@ -45,7 +45,7 @@
                         <p id="contact-number"></p>
                 </div>
                 <div class="col-md-6 pull-left">
-                    <<div class="mapouter" style="padding-top: 1%;padding-left: 1%"><div class="gmap_canvas" style="width: 100%;height: 700px"><iframe width="800" height="700" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:800px;width:100%;}</style></div>
+                    <div class="mapouter" style="padding-top: 1%;padding-left: 1%"><div class="gmap_canvas" style="width: 100%;height: 700px"><iframe width="800" height="700" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:800px;width:100%;}</style></div>
                 </div>
             </div>
         </div>
@@ -66,28 +66,28 @@
                                     str_contact_form +=
                                         '                                <div class="form-group">\n' +
                                         '<div class="col-md-5" style="margin-left: 30%">'+
-                                        '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                        '                                    <input type="text" style="background: #f1cba1" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                         '</div>'+
                                         '                                </div>\n' ;
                                 }if(value['slug'] == 'contact_no'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
                                    '<div class="col-md-5" style="margin-left: 30%">'+
-                                   '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '                                    <input type="text" style="background: #f1cba1" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                    '</div>'+
                                    '                                </div>\n';
                            }if(value['slug'] == 'email'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
                                    '<div class="col-md-5" style="margin-left: 30%">'+
-                                   '                                    <input type="email" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '                                    <input type="email" style="background: #f1cba1" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                    '</div>'+
                                    '                                </div>\n' ;
                            }if(value['slug'] == 'subject'){
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
                                                       '<div class="col-md-5" style="margin-left: 30%">'+
-                                   '                                    <input type="text" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '                                    <input type="text" style="background: #f1cba1" id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                                       '</div>'+
                                    '                                </div>\n' ;
 
@@ -95,7 +95,7 @@
                                str_contact_form +=
                                    '                                <div class="form-group">\n' +
                                        '<div class="col-md-5" style="margin-left: 30%">'+
-                                   '                                    <textarea  id="'+value['slug']+'" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
+                                   '                                    <textarea  id="'+value['slug']+'" style="background: #f1cba1" name="'+value['slug']+'" class="form-control" placeholder="Please Enter '+value['name']+'" required>\n' +
                                        '</textarea>'+
                                    '</div>'+
                                    '                                </div>\n' ;

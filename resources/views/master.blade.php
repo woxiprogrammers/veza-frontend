@@ -26,6 +26,14 @@
 <style>
     body{
         font-family: "Georgia", Times, serif;!important;
+        background-image: url({{env('WEBBASE_URL')."/NoImage/bg.png"}});
+        /* Full height */
+        /* Center and scale the image nicely */
+        background-repeat: repeat;
+    }
+    .row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
 </style>
 <body>
@@ -42,7 +50,7 @@
         </div>
         <div class="row" >
             <div class="col-md-2">
-                <img id="headerLogo" height="120px" width="140px" style="padding-left: 5%;padding-top: 2%">
+                <img id="headerLogo" height="120px" width="140px" style="padding-left: 5%;padding-top: 7%">
             </div>
             <div class="col-md-10" style="padding-top: 2%">
                 <div class="col-md-12" >
@@ -93,6 +101,7 @@
             success: function (responce) {
                 var obj = JSON.stringify(responce);
                 var jsonObj = JSON.parse(obj);
+                $("#visitor_count").html(jsonObj['data']['visitor_count']);
                 $("#headerLogo").attr("src",jsonObj['data']['headerData']['logo']);
                 $('#headerMessage').html(jsonObj['data']['headerData']['message']);
                 $('#footer').html(jsonObj['data']['footerData']['message']);
