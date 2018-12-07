@@ -374,7 +374,6 @@
                 })
                 var str_gallery = '';
                 $.each(jsonObj['data']['gallery'],function (key,galleryData){
-                    console.log(galleryData)
                     str_gallery +=' <div class="col-md-6" >\n' +
                         '                    <div class="card" style="width: 18rem;">\n' ;
                             if('images' in galleryData){
