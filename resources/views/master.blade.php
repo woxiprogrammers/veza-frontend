@@ -50,12 +50,12 @@
         </div>
         <div class="row" >
             <div class="col-md-2">
-                <img id="headerLogo" height="120px" width="140px" style="padding-left: 5%;padding-top: 7%">
+                <img id="headerLogo" height="120px" width="130px" style="padding-left: 5%;padding-top: 7%">
             </div>
             <div class="col-md-10" style="padding-top: 2%">
                 <div class="col-md-12" >
                     <nav class="navbar navbar-expand-lg navbar-light  pull-right">
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+                        <div class="collapse navbar-collapse">
                             <ul class="navbar-nav" id="navbarMenue">
                             </ul>
                         </div>
@@ -69,11 +69,8 @@
 <div class="row">
     <div class="col-md-12">
         <div id="myCarousel1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel1" data-slide-to="1"></li>
-                <li data-target="#myCarousel1" data-slide-to="2"></li>
-                <li data-target="#myCarousel1" data-slide-to="3"></li>
+            <ol class="carousel-indicators" id="target-images">
+
             </ol>
             <div class="carousel-inner" id="slider-main-div">
             </div>
@@ -99,6 +96,7 @@
             type:'get',
             dataType:'json',
             success: function (responce) {
+                console.log(responce);
                 var obj = JSON.stringify(responce);
                 var jsonObj = JSON.parse(obj);
                 $("#visitor_count").html(jsonObj['data']['visitor_count']);
@@ -130,7 +128,9 @@
                 $("#aboutUsImage").attr("src",jsonObj['data']['aboutUs']['image']);
                 $('#gmap_canvas').attr("src",jsonObj['data']['contactUs']['map']);
                 var slider_str = '';
+                var slider_target ='';
                 $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
+                    console.log(slider);
                     if(slider['slider_number'] == "slider1"){
                         slider_str += '<div class="carousel-item active">\n' +
                             '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:450px;!important;">\n' +
@@ -150,6 +150,7 @@
                                slider_str+= ' <br/><br/>\n' +
                         '                        </div>\n' +
                         '                    </div>';
+                        slider_target += '<li data-target="#myCarousel1" data-slide-to="1" class="active"></li>';
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
                             '                        <img src="'+slider['image']+'" style="width:100%; height:450px;!important;">\n' +
@@ -170,7 +171,7 @@
                             slider_str+= '<br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>';
-
+                        slider_target += '<li data-target="#myCarousel1" data-slide-to="2"></li>';
                     }if(slider['slider_number'] == "slider3"){
                         slider_str += '<div class="carousel-item">\n' +
                             '                        <img src="'+slider['image']+'"  style="width:100%; height:450px;!important;">\n' +
@@ -190,6 +191,7 @@
                          slider_str +='<br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>';
+                        slider_target += '<li data-target="#myCarousel1" data-slide-to="3"></li>';
                     }if(slider['slider_number'] == "slider4"){
                         slider_str += '<div class="carousel-item">\n' +
                             '                        <img src="'+slider['image']+'"  style="width:100%; height:450px;">\n' +
@@ -209,8 +211,10 @@
                         slider_str +='<br/><br/>\n' +
                             '                        </div>\n' +
                             '                    </div>';
+                        slider_target += '<li data-target="#myCarousel1" data-slide-to="4" ></li>';
                     }
                     $("#slider-main-div").html(slider_str);
+                    $("#target-images").html(slider_target);
                 });
 
                 if(jsonObj['data']['achievements'] == ""){

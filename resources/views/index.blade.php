@@ -47,8 +47,9 @@
             <img id="aboutUsImage" src="" style="width: 100%;height: 300px!important;">
         </div>
         <div class="col-md-2 col-padding-top-30">
-            <div class="card" style="padding: 2%;border: #eaa265 solid">
-                <marquee class="marqueestyle" behavior="scroll" direction="up" height="280" width="180" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" scrolldelay="99">
+            <div class="text-center"><strong>Latest News</strong></div>
+            <div class="card" style="padding: 2%;background-color: #f2f2f2">
+                <marquee class="marqueestyle" behavior="scroll" direction="up" height="280" width="170" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" scrolldelay="99">
                     <div id="marquee-up">
                     </div>
                 </marquee>
