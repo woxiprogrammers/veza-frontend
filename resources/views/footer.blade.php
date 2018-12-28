@@ -6,9 +6,9 @@
  * Time: 3:26 PM
  */
 ?>
-<div class="row background-footer" style="background-color: #ec9b57;">
+<div class="row background-footer" style="background-color: whitesmoke; padding-top: 3%">
     <div class="col-md-12">
-        <div class="row" style="color: white;padding-top: 1%">
+        <div class="row" style="color: black;padding-top: 1%">
             <div class="col-md-5" style="text-align: left">
                 <div id="footer"></div>
             </div>

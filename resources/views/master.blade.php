@@ -40,7 +40,7 @@
 <!-- Start Of Header -->
 <div class="row">
     <div class="col-md-12">
-        <div class="row" style="background-color: #ec9b57;padding-top: 10px">
+        <div class="row" style="background-color: #007bff;padding-top: 10px">
                 <div class="col-md-10 text-right">
                     <div style="color: white" class="header-info-color" id="headerMessage"></div>
                 </div>
@@ -104,6 +104,7 @@
                 $('#headerMessage').html(jsonObj['data']['headerData']['message']);
                 $('#footer').html(jsonObj['data']['footerData']['message']);
                 var str = '';
+                var footerstr='';
                 $.each(jsonObj['data']['socialMedia']['links'], function(key , value){
                     if(value['slug'] == 'facebook'){
                         str +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: white"></i></a>&nbsp;&nbsp';
@@ -118,9 +119,25 @@
                     }if(value['slug'] == 'youtube'){
                         str += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: white"></i></a>&nbsp;&nbsp'
                     }
-                    $('#footerSocialMedia').html(str);
                     $('#headerSocialLinks').html(str);
                 });
+                $.each(jsonObj['data']['socialMedia']['links'], function(key , value){
+                    if(value['slug'] == 'facebook'){
+                        footerstr +='<a href="'+value['social_link']+'"><i class="fa fa-facebook fa-lg" style="color: blue"></i></a>&nbsp;&nbsp';
+                    }if(value['slug'] == 'linked-in'){
+                        footerstr += '<a href="'+value['social_link']+'"><i class="fa fa-linkedin fa-lg" style="color: #007bff"></i></a>&nbsp;&nbsp'
+                    }if(value['slug'] == 'google'){
+                        footerstr += '<a href="'+value['social_link']+'"><i class="fa fa-google-plus fa-lg" style="color: indianred"></i></a>&nbsp;&nbsp'
+                    }if(value['slug'] == 'twitter'){
+                        footerstr += '<a href="'+value['social_link']+'"><i class="fa fa-twitter fa-lg" style="color: blue"></i></a>&nbsp;&nbsp'
+                    }if(value['slug'] == 'instagram'){
+                        footerstr += '<a href="'+value['social_link']+'"><i class="fa fa-instagram fa-lg" style="color: purple"></i></a>&nbsp;&nbsp'
+                    }if(value['slug'] == 'youtube'){
+                        footerstr += '<a href="'+value['social_link']+'"><i class="fa fa-youtube fa-lg" style="color: red"></i></a>&nbsp;&nbsp'
+                    }
+                    $('#footerSocialMedia').html(footerstr);
+                });
+
                 $('#contact-address').html(jsonObj['data']['contactUs']['address']);
                 $('#contact-number').html(jsonObj['data']['contactUs']['contact_number']);
                 $('#contact-email').html(jsonObj['data']['contactUs']['email']);
