@@ -96,7 +96,6 @@
             type:'get',
             dataType:'json',
             success: function (responce) {
-                console.log(responce);
                 var obj = JSON.stringify(responce);
                 var jsonObj = JSON.parse(obj);
                 $("#visitor_count").html(jsonObj['data']['visitor_count']);
@@ -147,10 +146,9 @@
                 var slider_str = '';
                 var slider_target ='';
                 $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
-                    console.log(slider);
                     if(slider['slider_number'] == "slider1"){
                         slider_str += '<div class="carousel-item active">\n' +
-                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:450px;!important;">\n' +
+                            '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:350px;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -170,7 +168,7 @@
                         slider_target += '<li data-target="#myCarousel1" data-slide-to="1" class="active"></li>';
                     }if(slider['slider_number'] == "slider2"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'" style="width:100%; height:450px;!important;">\n' +
+                            '                        <img src="'+slider['image']+'" style="width:100%; height:350px;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -191,7 +189,7 @@
                         slider_target += '<li data-target="#myCarousel1" data-slide-to="2"></li>';
                     }if(slider['slider_number'] == "slider3"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:450px;!important;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:350px;!important;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -211,7 +209,7 @@
                         slider_target += '<li data-target="#myCarousel1" data-slide-to="3"></li>';
                     }if(slider['slider_number'] == "slider4"){
                         slider_str += '<div class="carousel-item">\n' +
-                            '                        <img src="'+slider['image']+'"  style="width:100%; height:450px;">\n' +
+                            '                        <img src="'+slider['image']+'"  style="width:100%; height:350px;">\n' +
                             '                        <div class="carousel-caption">\n' +
                             '                            <br/><br/>\n' +
                             '                            <h1 style="opacity: 0.8;">\n' +
@@ -333,7 +331,11 @@
                         if(menuData['sub_menu'] != null){
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab1">' ;
                             menuData['sub_menu'].forEach(function (obj) {
-                                str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                if(obj['page_icon'] != null){
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 12px; width: 12px">'+obj['name']+'</a>';
+                                }else {
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                }
                             });
                                 str_sub_menu += '</div> ';
                         }
@@ -348,7 +350,11 @@
                         if(menuData['sub_menu'] != null){
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab2">' ;
                             menuData['sub_menu'].forEach(function (obj) {
-                                str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                if(obj['page_icon'] != null){
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 12px; width: 12px">'+obj['name']+'</a>';
+                                }else {
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                }
                             });
                             str_sub_menu += '</div> ';
                         }
@@ -363,7 +369,11 @@
                         if(menuData['sub_menu'] != null){
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab3">' ;
                             menuData['sub_menu'].forEach(function (obj) {
-                                str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                if(obj['page_icon'] != null){
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 12px; width: 12px">'+obj['name']+'</a>';
+                                }else {
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                }
                             });
                             str_sub_menu += '</div> ';
                         }
