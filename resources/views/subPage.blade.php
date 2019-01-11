@@ -142,6 +142,7 @@
                                 $("#myCarousel1").hide();
                             });
                         }else{
+                            $("#myCarousel1").hide();
                             $("#myCarousel2").hide();
                         }
                     }
