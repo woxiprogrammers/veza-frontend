@@ -237,9 +237,10 @@
                 }else{
                     var str_achivment = '';
                     $.each(jsonObj['data']['achievements'],function (key,achievementData){
+                        var dateFormat = new Date(achievementData['created_at']);
                         str_achivment += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe; ">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><b>'+achievementData['created_at']+'</b></div>\n' +
-                            '                        <div class="col-md-12"><b>Title : </b> <span style="color: #000000">'+achievementData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral;font-size: 15px;"><b>'+dateFormat.toDateString()+'</b></div>\n' +
+                            '                        <div class="col-md-12"><b>Title :  <span style="color: #000000;font-size: 18px">'+achievementData['title']+'</span></b></div>\n' +
                             '                        <div class="col-md-12"><b>Details : </b> '+achievementData['detail']+'</div>\n' +
                             '                    </div>';
                     });
@@ -251,9 +252,10 @@
                 }else{
                     var str_announcement = '';
                     $.each(jsonObj['data']['announcement'],function (key,announcmentData){
+                        var dateFormat = new Date(announcmentData['created_at']);
                         str_announcement += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><b>'+announcmentData['created_at']+'</b></div>\n' +
-                            '                        <div class="col-md-12"><b>Title : </b> <span style="color: #000000">'+announcmentData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral;font-size: 15px;"><b>'+dateFormat.toDateString()+'</b></div>\n' +
+                            '                        <div class="col-md-12"><b>Title :  <span style="color: #000000;font-size: 18px">'+announcmentData['title']+'</span></b></div>\n' +
                             '                        <div class="col-md-12"><b>Details : </b> '+announcmentData['detail']+'</div>\n' +
                             '                    </div>';
                     });
@@ -265,9 +267,10 @@
                     $('#pills-events').html('<h5>No data found</h5>');
                 }else{
                     $.each(jsonObj['data']['events'],function (key,eventData){
+                        var dateFormat = new Date(eventData['created_at']);
                         str_event += '<div class="row" style="border-bottom: 1px solid #b2b2b2; padding: 10px;background-color: #fefefe;">\n' +
-                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral"><b>'+eventData['created_at']+'</b></div>\n' +
-                            '                        <div class="col-md-12"><b>Title : </b> <span style="color: #000000">'+eventData['title']+'</span></div>\n' +
+                            '                        <div class="col-md-12" style="text-align: right; color: lightcoral;font-size: 15px;"><b>'+dateFormat.toDateString()+'</b></div>\n' +
+                            '                        <div class="col-md-12"><b>Title :  <span style="color: #000000;font-size: 18px">'+eventData['title']+'</span></b></div>\n' +
                             '                        <div class="col-md-12"><b>Details : </b> '+eventData['detail']+'</div>\n' +
                             '                    </div>';
                     });
