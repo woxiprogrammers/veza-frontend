@@ -133,7 +133,7 @@
     {{--End of Users Count--}}
     <div class="clearfix clearfix-height"></div>
     <!-- Start Of Contact Us -->
-    <div class="row background-contact" style="background-color: #007bff;padding-top: 2%" >
+    <div class="row background-contact" style="background-color: #4090ff;padding-top: 2%" >
         <div class="col-md-6" style="color: whitesmoke">
             <h5><i class="fa fa-home fa-lg" style="color: white"></i> <b> Address :</b></h5>
             <p id="contact-address"> </p>

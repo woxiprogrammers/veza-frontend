@@ -40,7 +40,7 @@
 <!-- Start Of Header -->
 <div class="row">
     <div class="col-md-12">
-        <div class="row" style="background-color: #007bff;padding-top: 10px">
+        <div class="row" style="background-color: #4090ff;padding-top: 10px">
                 <div class="col-md-10 text-right">
                     <div style="color: white" class="header-info-color" id="headerMessage"></div>
                 </div>
@@ -335,7 +335,7 @@
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab1">' ;
                             menuData['sub_menu'].forEach(function (obj) {
                                 if(obj['page_icon'] != null){
-                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 12px; width: 12px">'+' '+obj['name']+'</a>';
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 25px; width: 25px">'+' '+obj['name']+'</a>';
                                 }else {
                                     str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
                                 }
@@ -354,7 +354,7 @@
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab2">' ;
                             menuData['sub_menu'].forEach(function (obj) {
                                 if(obj['page_icon'] != null){
-                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 12px; width: 12px">'+' '+obj['name']+'</a>';
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 25px; width: 25px">'+' '+obj['name']+'</a>';
                                 }else {
                                     str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
                                 }
@@ -373,7 +373,7 @@
                             str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab3">' ;
                             menuData['sub_menu'].forEach(function (obj) {
                                 if(obj['page_icon'] != null){
-                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 12px; width: 12px">'+' '+obj['name']+'</a>';
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 25px; width: 25px">'+' '+obj['name']+'</a>';
                                 }else {
                                     str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
                                 }
