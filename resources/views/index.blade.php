@@ -133,17 +133,17 @@
     {{--End of Users Count--}}
     <div class="clearfix clearfix-height"></div>
     <!-- Start Of Contact Us -->
-    <div class="row background-contact" style="background-color: #4090ff;padding-top: 2%" >
-        <div class="col-md-6" style="color: whitesmoke">
-            <h5><i class="fa fa-home fa-lg" style="color: white"></i> <b> Address :</b></h5>
-            <p id="contact-address"> </p>
-            <h5><i class="fa fa-envelope-o" style="color: white"></i> <b> Email :</b></h5>
+    <div class="row background-contact" style="background-color: #4090ff;padding-top: 2% ;" >
+        <div class="col-md-6" style="color: whitesmoke;/*padding-left: 20%*/ text-align: center">
+            <h5><i class="fa fa-home fa-lg" style="color: white"></i> <b> Address </b></h5>
+            <p id="contact-address" style="width: 50%; margin-left: 25%"> </p>
+            <h5><i class="fa fa-envelope-o" style="color: white"></i> <b> Email </b></h5>
             <p id="contact-email"></p>
-            <h5><i class="fa fa-id-card-o" style="color: white"></i> <b> Contact no :</b></h5>
+            <h5><i class="fa fa-id-card-o" style="color: white"></i> <b> Contact Number </b></h5>
             <p id="contact-number"></p>
         </div>
         <div class="col-md-6 pull-left">
-            <div class="mapouter"><div class="gmap_canvas" style="width: 80%;height: 130%;"><iframe width="500" height="200" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:300px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+            <div class="mapouter"><div class="gmap_canvas" style="width: 80%;height: 130%;"><iframe width="500" height="220" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="#"></a></div><style>.mapouter{text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
         </div>
     </div>
     <!-- End Of Contact Us -->
