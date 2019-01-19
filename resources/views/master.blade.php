@@ -50,7 +50,7 @@
         </div>
         <div class="row" >
             <div class="col-md-2">
-                <img id="headerLogo" height="120px" width="130px" style="padding-left: 5%;padding-top: 7%">
+              <a href="{{env('WEBBASE_URL')}}"><img id="headerLogo" height="120px" width="130px" style="padding-left: 5%;padding-top: 7%"></a>
             </div>
             <div class="col-md-10" style="padding-top: 2%">
                 <div class="col-md-12" >
