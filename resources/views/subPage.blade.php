@@ -57,7 +57,7 @@
                             $.each(jsonObj['data']['sliderImages']['slider'],function (key,slider){
                                 if(slider['slider_number'] == "slider1"){
                                     slider_str += '<div class="carousel-item active">\n' +
-                                        '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:350px;!important;">\n' +
+                                        '                        <img id="slider-image" src="'+slider['image']+'" style="width:100%; height:400px;!important;">\n' +
                                         '                        <div class="carousel-caption">\n' +
                                         '                            <br/><br/>\n' +
                                         '                            <h1 style="opacity: 0.8;">\n' +
@@ -77,7 +77,7 @@
                                     slider_target += '<li data-target="#myCarousel1" data-slide-to="1" class="active"></li>';
                                 }if(slider['slider_number'] == "slider2"){
                                     slider_str += '<div class="carousel-item">\n' +
-                                        '                        <img src="'+slider['image']+'" style="width:100%; height:350px;!important;">\n' +
+                                        '                        <img src="'+slider['image']+'" style="width:100%; height:400px;!important;">\n' +
                                         '                        <div class="carousel-caption">\n' +
                                         '                            <br/><br/>\n' +
                                         '                            <h1 style="opacity: 0.8;">\n' +
@@ -98,7 +98,7 @@
                                     slider_target += '<li data-target="#myCarousel1" data-slide-to="2"></li>';
                                 }if(slider['slider_number'] == "slider3"){
                                     slider_str += '<div class="carousel-item">\n' +
-                                        '                        <img src="'+slider['image']+'"  style="width:100%; height:350px;!important;">\n' +
+                                        '                        <img src="'+slider['image']+'"  style="width:100%; height:400px;!important;">\n' +
                                         '                        <div class="carousel-caption">\n' +
                                         '                            <br/><br/>\n' +
                                         '                            <h1 style="opacity: 0.8;">\n' +
@@ -118,7 +118,7 @@
                                     slider_target += '<li data-target="#myCarousel1" data-slide-to="3"></li>';
                                 }if(slider['slider_number'] == "slider4"){
                                     slider_str += '<div class="carousel-item">\n' +
-                                        '                        <img src="'+slider['image']+'"  style="width:100%; height:350px;">\n' +
+                                        '                        <img src="'+slider['image']+'"  style="width:100%; height:400px;">\n' +
                                         '                        <div class="carousel-caption">\n' +
                                         '                            <br/><br/>\n' +
                                         '                            <h1 style="opacity: 0.8;">\n' +
