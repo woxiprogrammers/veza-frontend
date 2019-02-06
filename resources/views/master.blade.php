@@ -48,6 +48,9 @@
                     <div id="headerSocialLinks"></div>
                 </div>
         </div>
+        <div class="row">
+            <img id="headerImage" height="100px" width="100%" style="padding-left: 1%;padding-top: 5px">
+        </div>
         <div class="row" >
             <div class="col-md-2">
               <a href="{{env('WEBBASE_URL')}}"><img id="headerLogo" height="120px" width="130px" style="padding-left: 5%;padding-top: 7%"></a>
@@ -102,6 +105,11 @@
                 $("#headerLogo").attr("src",jsonObj['data']['headerData']['logo']);
                 $('#headerMessage').html(jsonObj['data']['headerData']['message']);
                 $('#footer').html(jsonObj['data']['footerData']['message']);
+                if(jsonObj['data']['headerData']['headerImage'] != null){
+                    $("#headerImage").attr("src",jsonObj['data']['headerData']['headerImage']);
+                } else {
+                    $("#headerImage").hide();
+                }
                 var str = '';
                 var footerstr='';
                 $.each(jsonObj['data']['socialMedia']['links'], function(key , value){
