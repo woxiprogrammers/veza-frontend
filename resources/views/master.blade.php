@@ -413,6 +413,44 @@
                             '                                        </a>\n' +
                             str_sub_menu +
                             '                                    </li>';
+                    }if(menuData['slug'] == 'custom-5'){
+                        var str_sub_menu = '';
+                        if(menuData['sub_menu'] != null){
+                            str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab3">' ;
+                            menuData['sub_menu'].forEach(function (obj) {
+                                if(obj['page_icon'] != null){
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 50px; width: 50px">'+"&nbsp;&nbsp;&nbsp;"+obj['name']+'</a>';
+                                }else {
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                }
+                            });
+                            str_sub_menu += '</div> ';
+                        }
+                        str_menu += '<li class="nav-item dropdown">\n' +
+                            '                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
+                            '                                            '+menuData['display_name']+'\n' +
+                            '                                        </a>\n' +
+                            str_sub_menu +
+                            '                                    </li>';
+                    }if(menuData['slug'] == 'custom-6'){
+                        var str_sub_menu = '';
+                        if(menuData['sub_menu'] != null){
+                            str_sub_menu += '<div id="drop-down" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinktab3">' ;
+                            menuData['sub_menu'].forEach(function (obj) {
+                                if(obj['page_icon'] != null){
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+'<img src="'+obj['page_icon']+'" style="height: 50px; width: 50px">'+"&nbsp;&nbsp;&nbsp;"+obj['name']+'</a>';
+                                }else {
+                                    str_sub_menu += '<a class="dropdown-item" href="{{env('WEBBASE_URL')}}/temp1/pages/sub-pages-view/'+obj['body_tab_name_id']+'">'+obj['name']+'</a>';
+                                }
+                            });
+                            str_sub_menu += '</div> ';
+                        }
+                        str_menu += '<li class="nav-item dropdown">\n' +
+                            '                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinktab3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
+                            '                                            '+menuData['display_name']+'\n' +
+                            '                                        </a>\n' +
+                            str_sub_menu +
+                            '                                    </li>';
                     }if(menuData['slug'] == 'custom-link-1'){
                         str_menu += ' <li class="nav-item">\n' +
                             '      <a class="nav-link" href="'+menuData['link']+'">'+menuData['display_name']+'</a>&nbsp;\n' +
